@@ -3,7 +3,7 @@ name: Sync mirror
 on:
   push:
     branches:
-      - main
+      - '*'
 
 jobs:
   mirror:
