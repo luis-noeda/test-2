@@ -19,6 +19,10 @@ jobs:
         env:
           MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
         run: |
+          test -n "$MIRROR_TOKEN" || {
+            echo "MIRROR_TOKEN is empty"
+            exit 1
+          }
           git config --local --unset-all http.https://github.com/.extraheader || true
 
           git remote remove mirror 2>/dev/null || true
