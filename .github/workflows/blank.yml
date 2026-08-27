@@ -19,6 +19,6 @@ jobs:
         env:
           MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
         run: |
-          git clone --mirror "https://x-access-token:${SOURCE_TOKEN}@github.com/${{ github.repository }}.git" repo.git
+          git clone --mirror "https://github.com/${{ github.repository }}.git" repo.git
           cd repo.git
           git push --mirror "https://x-access-token:${MIRROR_TOKEN}@github.com/luis-noeda/test-2.git"
